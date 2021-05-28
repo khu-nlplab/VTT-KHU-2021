@@ -24,7 +24,7 @@ class ImageBiLSTM(nn.Module):
         self.hid_dim = 384
 
         self.rnn = nn.LSTM(self.emb_dim, self.hid_dim, self.n_layers,
-                           bidirectional=True, dropout=0.1)
+                           bidirectional=True)
 
         self.pooling = nn.Sequential(nn.Linear(self.hid_dim * 2, self.hid_dim * 2),
                                      nn.Tanh(),
