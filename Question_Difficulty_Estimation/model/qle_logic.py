@@ -117,6 +117,6 @@ class TransformerAttn(nn.Module):
     def scale_for_low_variance(self, value):
         maximum_value = torch.FloatTensor([math.sqrt(torch.max(value))]).to(self.device)
         if maximum_value > 1.0:
-            value.divide_(maximum_value)
+            value.div_(maximum_value)
             return value
         return value
