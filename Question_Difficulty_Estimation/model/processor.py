@@ -8,7 +8,7 @@ class ModelProcessor():
         super(ModelProcessor, self).__init__()
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
         memory_ckpt = './model/memory.pt'
-        logic_ckpt = './model/logic_8642_reky.pt'
+        logic_ckpt = './model/logic.pt'
 
         self.memory_model = QuestionLevelDifficulty_M()
         self.logic_model = QuestionLevelDifficulty_L()
