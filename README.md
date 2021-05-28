@@ -6,7 +6,7 @@
 ### How to use
   1. 다음과 같이 clone을 해주세요.
   ```
-  git clone
+  git clone https://github.com/khu-nlplab/VTT-KHU-2021.git
   cd Question_Difficulty_Estimation
   pip install -r requirements.txt
   ```
