@@ -58,7 +58,7 @@ class DataPreprocessing():
 
         hq_file.close()
 
-        return subtitle
+        return str(subtitle)
 
     def get_text(self, question, subtitle):
         question_tokens = [self.init_token_idx] + \
