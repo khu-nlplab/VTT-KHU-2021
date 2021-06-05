@@ -35,3 +35,5 @@
   How did Haeyoung1 feel such surreal emotions?:
     Memory Level 3 | Logic Level 3 
   ```
+  
+  Contact : Bong-Min Kim (klbm126@khu.ac.kr)
