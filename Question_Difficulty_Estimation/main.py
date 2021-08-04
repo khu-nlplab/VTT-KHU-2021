@@ -13,8 +13,8 @@ def main():
     DataClass = DataPreprocessing()
     ModelClass = ModelProcessor()
 
-    questions = ["How did Haeyoung1 feel such surreal emotions?", "What does Haeyoung1 feel?"]
-    vids = ["AnotherMissOh18_001_0000", "AnotherMissOh18_020_0429"]
+    questions = ["Why did Haeyoung1 and Dokyung stop walking?", "What is Hun using for contacting?", "How does Chairman look when Taejin reported what Taejin did?"]
+    vids = ["AnotherMissOh16_036_0000", "AnotherMissOh17_011_0225", "AnotherMissOh16_007_0000"]
 
     for question, vid in zip(questions, vids):
         text_inputs, img_inputs = DataClass.preprocessing(question, vid)
