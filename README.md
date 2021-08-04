@@ -1,7 +1,7 @@
 # Video Turing Test 2021
 
 ## Question Difficulty Estimation
-입력 질문에 대한 난이도를 측정하는 모델입니다.
+- 입력 질문에 대한 난이도를 측정하는 모델입니다.
 
 ### How to use
   1. 다음과 같이 clone을 해주세요.
@@ -42,4 +42,4 @@
     Memory Level 3 | Logic Level 3 
   ```
   
-  Contact : Bong-Min Kim (klbm126@khu.ac.kr)
+  - Contact : Bong-Min Kim (klbm126@khu.ac.kr)
