@@ -32,6 +32,9 @@
   ```
   python main.py
   
+  questions = ["Why did Haeyoung1 and Dokyung stop walking?", "What is Hun using for contacting?", "How does Chairman look when Taejin reported what Taejin did?"]
+  vids = ["AnotherMissOh16_036_0000", "AnotherMissOh17_011_0225", "AnotherMissOh16_007_0000"]
+
   Why did Haeyoung1 and Dokyung stop walking?:
     Memory Level 3 | Logic Level 4 
 
