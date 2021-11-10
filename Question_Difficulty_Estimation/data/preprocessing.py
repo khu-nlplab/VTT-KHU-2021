@@ -27,9 +27,12 @@ class DataPreprocessing():
         self.vid2image_h5 = './data/MissO_vid2image_v3.h5'
 
         self.max_len = 512
+        self.all_images = '0000'
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
     def preprocessing(self, question, vid):
+        vid = self.check(vid)
+
         image_inputs, subtitle = self.get_image(vid), self.get_subtitle(vid)
 
         text_inputs = self.get_text(question, subtitle)
@@ -40,11 +43,7 @@ class DataPreprocessing():
 
         hq_file = h5py.File(self.vid2image_h5, 'r')
 
-        stack_images = hq_file[str(vid)][:]
-
-        stack_images = [img for step, img in enumerate(stack_images) if step % 3 == 0]
-
-        image_inputs = [torch.tensor(stack_images).to(self.device)]
+        image_inputs = self.hqfile_to_data(hq_file, vid, mode='image')
 
         hq_file.close()
 
@@ -53,8 +52,8 @@ class DataPreprocessing():
     def get_subtitle(self, vid):
 
         hq_file = h5py.File(self.vid2sub_h5, 'r')
-
-        subtitle = hq_file[str(vid)][()]
+        
+        subtitle = self.hqfile_to_data(hq_file, vid, mode='subtitle')
 
         hq_file.close()
 
@@ -100,3 +99,30 @@ class DataPreprocessing():
         attention_mask = torch.tensor(attention_mask)
 
         return attention_mask.float()
+
+    def check(self, vid):
+        hq_file = h5py.File(self.vid2image_h5, 'r')
+
+        try:
+            stack_images = hq_file[str(vid)][:]
+        except KeyError:
+            vid = vid.split('_')
+            vid[-1] = self.all_images
+            vid = '_'.join(vid)
+        
+        hq_file.close()
+
+        return vid
+
+    def hqfile_to_data(self, hq_file, vid, mode=None):
+        if mode == 'image':
+            
+            stack_images = hq_file[str(vid)][:]            
+
+            stack_images = [img for step, img in enumerate(stack_images) if step % 3 == 0]
+            stack = [torch.tensor(stack_images).to(self.device)]
+            
+        elif mode == 'subtitle':
+            stack = hq_file[str(vid)][()]
+
+        return stack
