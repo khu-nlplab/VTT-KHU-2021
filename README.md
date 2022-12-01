@@ -29,20 +29,21 @@
         MissO_vid2sub_v3.h5  ✔
   ```
   3. output은 다음과 같습니다.
-  ```
-  python main.py
-  
-  questions = ["Why did Haeyoung1 and Dokyung stop walking?", "What is Hun using for contacting?", "How does Chairman look when Taejin reported what Taejin did?"]
-  vids = ["AnotherMissOh16_036_0000", "AnotherMissOh17_011_0225", "AnotherMissOh16_007_0000"]
+```
+python main.py
+```
+```
+questions = ["Why did Haeyoung1 and Dokyung stop walking?", "What is Hun using for contacting?", "How does Chairman look when Taejin reported what Taejin did?"]
+vids = ["AnotherMissOh16_036_0000", "AnotherMissOh17_011_0225", "AnotherMissOh16_007_0000"]
 
-  Why did Haeyoung1 and Dokyung stop walking?:
-    Memory Level 3 | Logic Level 4 
+Why did Haeyoung1 and Dokyung stop walking?:
+  Memory Level 3 | Logic Level 4 
 
-  What is Hun using for contacting?:
-    Memory Level 2 | Logic Level 1 
+What is Hun using for contacting?:
+  Memory Level 2 | Logic Level 1 
 
-  How does Chairman look when Taejin reported what Taejin did?:
-    Memory Level 3 | Logic Level 3 
-  ```
+How does Chairman look when Taejin reported what Taejin did?:
+  Memory Level 3 | Logic Level 3 
+```
   
   - Contact : Bong-Min Kim (klbm126@khu.ac.kr)
